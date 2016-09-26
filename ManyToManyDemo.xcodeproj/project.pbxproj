@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11315C664F410D66F25D29AC /* libPods-ManyToManyDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD741C5272DA2698629DDA24 /* libPods-ManyToManyDemo.a */; };
+		362691231D99297C006F6EEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 362691221D99297C006F6EEE /* main.m */; };
+		362691261D99297C006F6EEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 362691251D99297C006F6EEE /* AppDelegate.m */; };
+		3626912C1D99297C006F6EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3626912A1D99297C006F6EEE /* Main.storyboard */; };
+		3626912E1D99297C006F6EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3626912D1D99297C006F6EEE /* Assets.xcassets */; };
+		362691311D99297C006F6EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3626912F1D99297C006F6EEE /* LaunchScreen.storyboard */; };
+		3626913A1D99387A006F6EEE /* WDGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362691391D99387A006F6EEE /* WDGLoginViewController.m */; };
+		3626913D1D99388D006F6EEE /* WDGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3626913C1D99388D006F6EEE /* WDGMainViewController.m */; };
+		362691401D99389C006F6EEE /* WDGInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3626913F1D99389C006F6EEE /* WDGInviteViewController.m */; };
+		362691431D9938B6006F6EEE /* WDGRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362691421D9938B6006F6EEE /* WDGRoomViewController.m */; };
+		36DD548B1D9A3BC9006CAA1D /* WDGUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3626911E1D99297C006F6EEE /* ManyToManyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManyToManyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		362691221D99297C006F6EEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		362691241D99297C006F6EEE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		362691251D99297C006F6EEE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3626912B1D99297C006F6EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3626912D1D99297C006F6EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		362691301D99297C006F6EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		362691321D99297C006F6EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		362691381D99387A006F6EEE /* WDGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGLoginViewController.h; sourceTree = "<group>"; };
+		362691391D99387A006F6EEE /* WDGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGLoginViewController.m; sourceTree = "<group>"; };
+		3626913B1D99388D006F6EEE /* WDGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGMainViewController.h; sourceTree = "<group>"; };
+		3626913C1D99388D006F6EEE /* WDGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGMainViewController.m; sourceTree = "<group>"; };
+		3626913E1D99389C006F6EEE /* WDGInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGInviteViewController.h; sourceTree = "<group>"; };
+		3626913F1D99389C006F6EEE /* WDGInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGInviteViewController.m; sourceTree = "<group>"; };
+		362691411D9938B6006F6EEE /* WDGRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRoomViewController.h; sourceTree = "<group>"; };
+		362691421D9938B6006F6EEE /* WDGRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRoomViewController.m; sourceTree = "<group>"; };
+		36DD54891D9A3BC9006CAA1D /* WDGUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGUserTableViewCell.h; sourceTree = "<group>"; };
+		36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGUserTableViewCell.m; sourceTree = "<group>"; };
+		8648266A63A718E81FD4F4D0 /* Pods-ManyToManyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyToManyDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManyToManyDemo/Pods-ManyToManyDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CD741C5272DA2698629DDA24 /* libPods-ManyToManyDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManyToManyDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F90468765C4C424656407F /* Pods-ManyToManyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyToManyDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManyToManyDemo/Pods-ManyToManyDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3626911B1D99297C006F6EEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11315C664F410D66F25D29AC /* libPods-ManyToManyDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FE3069B0BA720E8FE288F73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD741C5272DA2698629DDA24 /* libPods-ManyToManyDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		362691151D99297C006F6EEE = {
+			isa = PBXGroup;
+			children = (
+				362691201D99297C006F6EEE /* ManyToManyDemo */,
+				3626911F1D99297C006F6EEE /* Products */,
+				78C4DD4687BB4967C1E83BFD /* Pods */,
+				1FE3069B0BA720E8FE288F73 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3626911F1D99297C006F6EEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3626911E1D99297C006F6EEE /* ManyToManyDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		362691201D99297C006F6EEE /* ManyToManyDemo */ = {
+			isa = PBXGroup;
+			children = (
+				36DD54891D9A3BC9006CAA1D /* WDGUserTableViewCell.h */,
+				36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */,
+				36DD54881D9A1D8D006CAA1D /* ViewController */,
+				362691241D99297C006F6EEE /* AppDelegate.h */,
+				362691251D99297C006F6EEE /* AppDelegate.m */,
+				3626912A1D99297C006F6EEE /* Main.storyboard */,
+				3626912D1D99297C006F6EEE /* Assets.xcassets */,
+				3626912F1D99297C006F6EEE /* LaunchScreen.storyboard */,
+				362691321D99297C006F6EEE /* Info.plist */,
+				362691211D99297C006F6EEE /* Supporting Files */,
+			);
+			path = ManyToManyDemo;
+			sourceTree = "<group>";
+		};
+		362691211D99297C006F6EEE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				362691221D99297C006F6EEE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36DD54881D9A1D8D006CAA1D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				362691381D99387A006F6EEE /* WDGLoginViewController.h */,
+				362691391D99387A006F6EEE /* WDGLoginViewController.m */,
+				3626913B1D99388D006F6EEE /* WDGMainViewController.h */,
+				3626913C1D99388D006F6EEE /* WDGMainViewController.m */,
+				3626913E1D99389C006F6EEE /* WDGInviteViewController.h */,
+				3626913F1D99389C006F6EEE /* WDGInviteViewController.m */,
+				362691411D9938B6006F6EEE /* WDGRoomViewController.h */,
+				362691421D9938B6006F6EEE /* WDGRoomViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		78C4DD4687BB4967C1E83BFD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4F90468765C4C424656407F /* Pods-ManyToManyDemo.debug.xcconfig */,
+				8648266A63A718E81FD4F4D0 /* Pods-ManyToManyDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3626911D1D99297C006F6EEE /* ManyToManyDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 362691351D99297C006F6EEE /* Build configuration list for PBXNativeTarget "ManyToManyDemo" */;
+			buildPhases = (
+				4A09EF7028F64803CD1B2D0C /* [CP] Check Pods Manifest.lock */,
+				3626911A1D99297C006F6EEE /* Sources */,
+				3626911B1D99297C006F6EEE /* Frameworks */,
+				3626911C1D99297C006F6EEE /* Resources */,
+				730A2303AF8A61AB914C8E0D /* [CP] Embed Pods Frameworks */,
+				99EC5FA75EE6E5B1946F7BE8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ManyToManyDemo;
+			productName = ManyToManyDemo;
+			productReference = 3626911E1D99297C006F6EEE /* ManyToManyDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		362691161D99297C006F6EEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = WildDog;
+				TargetAttributes = {
+					3626911D1D99297C006F6EEE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5RERN32D73;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 362691191D99297C006F6EEE /* Build configuration list for PBXProject "ManyToManyDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 362691151D99297C006F6EEE;
+			productRefGroup = 3626911F1D99297C006F6EEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3626911D1D99297C006F6EEE /* ManyToManyDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3626911C1D99297C006F6EEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				362691311D99297C006F6EEE /* LaunchScreen.storyboard in Resources */,
+				3626912E1D99297C006F6EEE /* Assets.xcassets in Resources */,
+				3626912C1D99297C006F6EEE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A09EF7028F64803CD1B2D0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		730A2303AF8A61AB914C8E0D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManyToManyDemo/Pods-ManyToManyDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99EC5FA75EE6E5B1946F7BE8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManyToManyDemo/Pods-ManyToManyDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3626911A1D99297C006F6EEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DD548B1D9A3BC9006CAA1D /* WDGUserTableViewCell.m in Sources */,
+				3626913D1D99388D006F6EEE /* WDGMainViewController.m in Sources */,
+				362691431D9938B6006F6EEE /* WDGRoomViewController.m in Sources */,
+				3626913A1D99387A006F6EEE /* WDGLoginViewController.m in Sources */,
+				362691261D99297C006F6EEE /* AppDelegate.m in Sources */,
+				362691401D99389C006F6EEE /* WDGInviteViewController.m in Sources */,
+				362691231D99297C006F6EEE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3626912A1D99297C006F6EEE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3626912B1D99297C006F6EEE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3626912F1D99297C006F6EEE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				362691301D99297C006F6EEE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		362691331D99297C006F6EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		362691341D99297C006F6EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		362691361D99297C006F6EEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F90468765C4C424656407F /* Pods-ManyToManyDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ManyToManyDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.ManyToManyDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		362691371D99297C006F6EEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8648266A63A718E81FD4F4D0 /* Pods-ManyToManyDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ManyToManyDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.ManyToManyDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		362691191D99297C006F6EEE /* Build configuration list for PBXProject "ManyToManyDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				362691331D99297C006F6EEE /* Debug */,
+				362691341D99297C006F6EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		362691351D99297C006F6EEE /* Build configuration list for PBXNativeTarget "ManyToManyDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				362691361D99297C006F6EEE /* Debug */,
+				362691371D99297C006F6EEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 362691161D99297C006F6EEE /* Project object */;
+}
