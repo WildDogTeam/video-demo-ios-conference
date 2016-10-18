@@ -82,7 +82,7 @@
         }
 
         if (error != nil) {
-            if ([error.domain isEqualToString:WDGVideoErrorDomain] && error.code == WDGVideoErrorCodeConversationRejected) {
+            if ([error.domain isEqualToString:WDGVideoErrorDomain] && error.code == WDGVideoErrorConversationInvitationRejected) {
                 // 对方拒绝邀请
                 NSString *message = [NSString stringWithFormat:@"%@\n拒绝了邀请", userID];
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];

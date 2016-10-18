@@ -64,6 +64,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		361860211DB6285E00D11504 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36DD54891D9A3BC9006CAA1D /* WDGUserTableViewCell.h */,
+				36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		362691151D99297C006F6EEE = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +94,7 @@
 		362691201D99297C006F6EEE /* ManyToManyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				36DD54891D9A3BC9006CAA1D /* WDGUserTableViewCell.h */,
-				36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */,
+				361860211DB6285E00D11504 /* View */,
 				36DD54881D9A1D8D006CAA1D /* ViewController */,
 				362691241D99297C006F6EEE /* AppDelegate.h */,
 				362691251D99297C006F6EEE /* AppDelegate.m */,
