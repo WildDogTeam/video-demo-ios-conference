@@ -75,7 +75,7 @@
 {
     self.bottomButton.titleLabel.text = @"正在邀请中，点击取消会话";
     __weak __typeof__(self) weakSelf = self;
-    self.outgoingInvite = [self.videoClient inviteUser:userID localStream:self.localStream conversationMode:WDGVideoConversationModeServerBased completion:^(WDGVideoConversation *conversation, NSError *error) {
+    self.outgoingInvite = [self.videoClient inviteWithParticipantID:userID localStream:self.localStream conversationMode:WDGVideoConversationModeServerBased completion:^(WDGVideoConversation *conversation, NSError *error) {
         __strong __typeof__(self) strongSelf = weakSelf;
         if (strongSelf == nil) {
             return;
@@ -119,7 +119,7 @@
 
 - (void)wilddogVideoClient:(WDGVideoClient *)videoClient didReceiveInvite:(WDGVideoIncomingInvite *)invite
 {
-    NSString *message = [NSString stringWithFormat:@"%@\n邀请你加入会话", invite.fromUserID];
+    NSString *message = [NSString stringWithFormat:@"%@\n邀请你加入会话", invite.fromParticipantID];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
 
     __weak __typeof__(self) weakSelf = self;
@@ -162,7 +162,7 @@
             if (strongSelf == nil) {
                 return;
             }
-            NSString *message = [NSString stringWithFormat:@"%@\n取消了邀请", invite.fromUserID];
+            NSString *message = [NSString stringWithFormat:@"%@\n取消了邀请", invite.fromParticipantID];
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:NULL]];
             [strongSelf presentViewController:alertController animated:YES completion:NULL];

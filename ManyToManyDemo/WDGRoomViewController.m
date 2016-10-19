@@ -81,7 +81,7 @@
 {
     // 邀请其他用户加入当前会议
     NSError *error = nil;
-    if (![self.videoConversation inviteUser:userID error:&error]) {
+    if (![self.videoConversation inviteWithParticipantID:userID error:&error]) {
         NSLog(@"未能邀请用户，错误信息：%@", error);
     }
 }
@@ -96,7 +96,7 @@
             WDGVideoRemoteStream *stream = participant.stream;
             [stream attach:view];
             view.hidden = NO;
-            self.attachedViews[participant.userID] = view;
+            self.attachedViews[participant.participantID] = view;
             return;
         }
     }
@@ -112,13 +112,13 @@
 
 - (void)conversation:(WDGVideoConversation *)conversation didDisconnectParticipant:(WDGVideoParticipant *)participant
 {
-    WDGVideoView *attachedView = self.attachedViews[participant.userID];
+    WDGVideoView *attachedView = self.attachedViews[participant.participantID];
 
     // 参与者离线，解绑并隐藏 WDGVideoView
     if (attachedView != nil) {
         [participant.stream detach:attachedView];
         attachedView.hidden = YES;
-        [self.attachedViews removeObjectForKey:participant.userID];
+        [self.attachedViews removeObjectForKey:participant.participantID];
     }
 
     // 检查是否应该结束会话
