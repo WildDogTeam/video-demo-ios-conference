@@ -56,7 +56,7 @@
 - (IBAction)invite:(id)sender
 {
     // 展示邀请界面，排除当前参与者
-    NSMutableArray<NSString *> *excludedUserList = [[self.videoConversation.participants valueForKey:@"userID"] mutableCopy];
+    NSMutableArray<NSString *> *excludedUserList = [[self.videoConversation.participants valueForKey:@"participantID"] mutableCopy];
     [excludedUserList addObject:self.user.uid];
 
     UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userListNavigationController"];
