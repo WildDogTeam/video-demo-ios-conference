@@ -35,7 +35,7 @@
     // 设置 WDGSyncReference
     // 这个路径是VideoSDK的交互路径，WilddogVideo可换成自定义路径
     // 但采用Server-based模式时需要保证该交互路径和控制面板中的交互路径一致
-    WDGSyncReference *videoReference = [[WDGSync sync] referenceWithPath:@"wilddog"];
+    WDGSyncReference *videoReference = [[WDGSync sync] referenceWithPath:@"wilddogVideo"];
 
     // 匿名登录
     [[WDGAuth auth] signOut:nil];
