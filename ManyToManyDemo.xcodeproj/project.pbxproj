@@ -394,6 +394,7 @@
 				DEVELOPMENT_TEAM = 5RERN32D73;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ManyToManyDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.ManyToManyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +409,7 @@
 				DEVELOPMENT_TEAM = 5RERN32D73;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ManyToManyDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.ManyToManyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

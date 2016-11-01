@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -171,38 +170,38 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hLX-ez-1H1">
-                                <rect key="frame" x="22" y="478" width="349" height="110"/>
+                                <rect key="frame" x="371" y="478" width="0.0" height="110"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgB-q0-uAL" customClass="WDGVideoView">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="110"/>
+                                    <view hidden="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgB-q0-uAL" customClass="WDGVideoView">
+                                        <rect key="frame" x="-371" y="-478" width="0.0" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AgB-q0-uAL" secondAttribute="height" multiplier="9:16" id="lpE-am-vaH"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-eP-ywR" customClass="WDGVideoView">
-                                        <rect key="frame" x="72" y="0.0" width="61.5" height="110"/>
+                                    <view hidden="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-eP-ywR" customClass="WDGVideoView">
+                                        <rect key="frame" x="-371" y="-478" width="0.0" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="b3Q-eP-ywR" secondAttribute="height" multiplier="9:16" id="bxg-9S-khp"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-2n-SHs" customClass="WDGVideoView">
-                                        <rect key="frame" x="144" y="0.0" width="61.5" height="110"/>
+                                    <view hidden="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-2n-SHs" customClass="WDGVideoView">
+                                        <rect key="frame" x="-371" y="-478" width="0.0" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="f8J-2n-SHs" secondAttribute="height" multiplier="9:16" id="iQ3-aJ-dqh"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="T33-EG-5j7" customClass="WDGVideoView">
-                                        <rect key="frame" x="215.5" y="0.0" width="61.5" height="110"/>
+                                    <view hidden="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T33-EG-5j7" customClass="WDGVideoView">
+                                        <rect key="frame" x="-371" y="-478" width="0.0" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="T33-EG-5j7" secondAttribute="height" multiplier="9:16" id="iXG-bc-fS9"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJK-5m-j8M" customClass="WDGVideoView">
-                                        <rect key="frame" x="287.5" y="0.0" width="61.5" height="110"/>
+                                    <view hidden="YES" contentMode="scaleAspectFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJK-5m-j8M" customClass="WDGVideoView">
+                                        <rect key="frame" x="-371" y="-478" width="0.0" height="0.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="KJK-5m-j8M" secondAttribute="height" multiplier="9:16" id="P5J-Uo-vuc"/>

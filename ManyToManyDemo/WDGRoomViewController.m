@@ -91,6 +91,7 @@
 - (void)conversation:(WDGVideoConversation *)conversation didConnectParticipant:(WDGVideoParticipant *)participant
 {
     // 连接参与者，寻找可用的 WDGVideoView，并与其绑定
+    NSLog(@"已连接用户 %@", participant.participantID);
     for (WDGVideoView *view in [self.remoteStackView.arrangedSubviews reverseObjectEnumerator]) {
         if (![self.attachedViews.allValues containsObject:view]) {
             WDGVideoRemoteStream *stream = participant.stream;
@@ -105,6 +106,7 @@
 - (void)conversation:(WDGVideoConversation *)conversation didFailToConnectParticipant:(WDGVideoParticipant *)participant error:(NSError *)error
 {
     // 检查是否应该结束会话
+    NSLog(@"未能连接用户 %@", participant.participantID);
     if (conversation.participants.count == 0) {
         [self disconnect:nil];
     }
