@@ -84,6 +84,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[WDGUserTableViewCell class]]) {
+        [self userTableViewCellDidTappedActionButton:(WDGUserTableViewCell *)cell];
+    }
 }
 
 #pragma mark - WDGDelegate

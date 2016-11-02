@@ -16,7 +16,7 @@
     
     [self.actionButton addTarget:self action:@selector(actionButtonDidTapped:) forControlEvents:UIControlEventTouchUpInside];
 
-    self.actionButton.layer.borderWidth = 1.0;
+    self.actionButton.layer.borderWidth = 0.5;
     self.actionButton.layer.borderColor = [self.tintColor CGColor];
     self.actionButton.layer.cornerRadius = 4.0;
 }

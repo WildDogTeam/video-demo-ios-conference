@@ -63,7 +63,7 @@
         [self presentViewController:navigationController animated:YES completion:NULL];
     } else {
         // 当前正在邀请，取消邀请
-        self.bottomButton.titleLabel.text = @"发起会话";
+        [self.bottomButton setTitle:@"发起会话" forState:UIControlStateNormal];
         [self.outgoingInvite cancel];
         self.outgoingInvite = nil;
     }
@@ -73,13 +73,16 @@
 
 - (void)inviteViewController:(WDGInviteViewController *)viewController didDissmissedWithInvitingUserID:(NSString *)userID
 {
-    self.bottomButton.titleLabel.text = @"正在邀请中，点击取消会话";
+    [self.bottomButton setTitle:@"正在邀请中，点击取消会话" forState:UIControlStateNormal];
     __weak __typeof__(self) weakSelf = self;
-    self.outgoingInvite = [self.videoClient inviteWithParticipantID:userID localStream:self.localStream conversationMode:WDGVideoConversationModeServerBased completion:^(WDGVideoConversation *conversation, NSError *error) {
+    self.outgoingInvite = [self.videoClient inviteWithParticipantID:userID localStream:self.localStream conversationMode:WDGVideoConversationModeP2P completion:^(WDGVideoConversation *conversation, NSError *error) {
         __strong __typeof__(self) strongSelf = weakSelf;
         if (strongSelf == nil) {
             return;
         }
+
+        [strongSelf.bottomButton setTitle:@"发起会话" forState:UIControlStateNormal];
+        strongSelf.outgoingInvite = nil;
 
         if (error != nil) {
             if ([error.domain isEqualToString:WDGVideoErrorDomain] && error.code == WDGVideoErrorConversationInvitationRejected) {
@@ -88,15 +91,10 @@
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
                 [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:NULL]];
                 [strongSelf presentViewController:alertController animated:YES completion:NULL];
-
-                strongSelf.bottomButton.titleLabel.text = @"发起会话";
-                strongSelf.outgoingInvite = nil;
                 return;
             }
 
             // 其他错误
-            strongSelf.bottomButton.titleLabel.text = @"发起会话";
-            strongSelf.outgoingInvite = nil;
             NSLog(@"邀请失败，错误信息: %@", error);
             return;
         }
@@ -109,9 +107,6 @@
         conversation.delegate = roomViewController;
         roomViewController.videoReference = strongSelf.videoReference;
         [strongSelf presentViewController:navigationViewController animated:YES completion:NULL];
-
-        strongSelf.bottomButton.titleLabel.text = @"发起会话";
-        strongSelf.outgoingInvite = nil;
     }];
 }
 
