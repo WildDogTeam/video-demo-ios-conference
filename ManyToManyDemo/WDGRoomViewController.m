@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
 
+    self.title = self.conferenceID;
+
     self.attachedViews = [[NSMutableDictionary<NSString *, WDGVideoView *> alloc] init];
 
     [self setupLocalStream];
