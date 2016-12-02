@@ -13,8 +13,7 @@
 
 @interface WDGRoomViewController : UIViewController <WDGVideoConversationDelegate>
 
-@property (nonatomic, strong) WDGUser *user;
-@property (nonatomic, strong) WDGVideoConversation *videoConversation;
-@property (nonatomic, strong) WDGSyncReference *videoReference;
+@property (nonatomic, strong) WDGVideoClient *videoClient;
+@property (nonatomic, strong) NSString *conferenceID;
 
 @end

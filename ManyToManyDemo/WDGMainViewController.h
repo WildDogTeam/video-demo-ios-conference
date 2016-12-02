@@ -14,8 +14,6 @@
 
 @interface WDGMainViewController : UIViewController
 
-@property (nonatomic, strong) WDGUser *user;
-@property (nonatomic, strong) WDGSyncReference *videoReference;
 @property (nonatomic, strong) WDGVideoClient *videoClient;
 
 @end

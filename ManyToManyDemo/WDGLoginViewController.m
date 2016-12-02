@@ -32,11 +32,6 @@
     WDGOptions *options = [[WDGOptions alloc] initWithSyncURL:[NSString stringWithFormat:@"https://%@.wilddogio.com", appID]];
     [WDGApp configureWithOptions:options];
 
-    // 设置 WDGSyncReference
-    // 这个路径是VideoSDK的交互路径，WilddogVideo可换成自定义路径
-    // 但采用Server-based模式时需要保证该交互路径和控制面板中的交互路径一致
-    WDGSyncReference *videoReference = [[WDGSync sync] referenceWithPath:@"wilddogVideo"];
-
     // 匿名登录
     [[WDGAuth auth] signOut:nil];
     __weak __typeof__(self) weakSelf = self;
@@ -52,7 +47,7 @@
             return;
         }
 
-        WDGVideoClient *videoClient = [[WDGVideoClient alloc] initWithSyncReference:videoReference user:user];
+        WDGVideoClient *videoClient = [[WDGVideoClient alloc] initWithApp:[WDGApp defaultApp]];
 
         if (videoClient == nil) {
             NSLog(@"创建 WDGVideoClient 失败");
@@ -61,11 +56,10 @@
         }
 
         // 登录成功，进入主界面
-        WDGMainViewController *mainViewController = [strongSelf.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
-        mainViewController.user = user;
-        mainViewController.videoReference = videoReference;
+        UINavigationController *mainNavigationController = [strongSelf.storyboard instantiateViewControllerWithIdentifier:@"mainNavigationController"];
+        WDGMainViewController *mainViewController = mainNavigationController.viewControllers.firstObject;
         mainViewController.videoClient = videoClient;
-        [strongSelf presentViewController:mainViewController animated:YES completion:NULL];
+        [strongSelf presentViewController:mainNavigationController animated:YES completion:NULL];
 
         strongSelf.loginButton.enabled = YES;
     }];

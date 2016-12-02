@@ -6,18 +6,18 @@
 //  Copyright © 2016 WildDog. All rights reserved.
 //
 
-#import <WilddogAuth/WilddogAuth.h>
+#import <WilddogCore/WilddogCore.h>
 #import <WilddogVideo/WilddogVideo.h>
 
 #import "WDGRoomViewController.h"
-#import "WDGInviteViewController.h"
 
-@interface WDGRoomViewController () <WDGInviteViewControllerDelegate>
-
-@property (nonatomic, weak) IBOutlet WDGVideoView *centerVideoView;
-@property (nonatomic, weak) IBOutlet UIStackView *remoteStackView;
+@interface WDGRoomViewController () <WDGVideoConferenceDelegate, WDGVideoParticipantDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary<NSString *, WDGVideoView *> *attachedViews;
+@property (strong, nonatomic) IBOutletCollection(WDGVideoView) NSArray *videoViews;
+
+@property (nonatomic, strong) WDGVideoLocalStream *localStream;
+@property (nonatomic, strong) WDGVideoConference *conference;
 
 @end
 
@@ -29,104 +29,112 @@
 
     self.attachedViews = [[NSMutableDictionary<NSString *, WDGVideoView *> alloc] init];
 
-    self.centerVideoView.contentMode = UIViewContentModeScaleAspectFill;
-    [self.videoConversation.localStream attach:self.centerVideoView];
+    [self setupLocalStream];
+
+    WDGVideoConnectOptions *connectOptions = [[WDGVideoConnectOptions alloc] initWithLocalStream:self.localStream];
+
+    self.conference = [self.videoClient connectToConferenceWithID:self.conferenceID options:connectOptions delegate:self];
 }
 
-#pragma mark - Actions
-
-- (IBAction)flipCameraButtonTapped:(id)sender
+- (void)setupLocalStream
 {
-    // 翻转摄像头
-    [self.videoConversation.localStream flipCamera];
+    WDGVideoLocalStreamOptions *localStreamOptions = [[WDGVideoLocalStreamOptions alloc] init];
+    localStreamOptions.videoOption = WDGVideoConstraintsHigh;
+
+    self.localStream = [[WDGVideoLocalStream alloc] initWithOptions:localStreamOptions];
+
+    WDGVideoView *videoView = self.videoViews.firstObject;
+    self.attachedViews[self.videoClient.uid] = videoView;
+    [self.localStream attach:videoView];
 }
 
-- (IBAction)toggleMicrophone:(id)sender
+- (void)attachStreamFromParticipant:(WDGVideoParticipant *)participant
 {
-    // 切换麦克风录音开关
-    self.videoConversation.localStream.audioEnabled = !self.videoConversation.localStream.audioEnabled;
-}
-
-- (IBAction)toggleVideo:(id)sender
-{
-    // 切换视频开关
-    self.videoConversation.localStream.videoEnabled = !self.videoConversation.localStream.videoEnabled;
-}
-
-- (IBAction)invite:(id)sender
-{
-    // 展示邀请界面，排除当前参与者
-    NSMutableArray<NSString *> *excludedUserList = [[self.videoConversation.participants valueForKey:@"participantID"] mutableCopy];
-    [excludedUserList addObject:self.user.uid];
-
-    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"userListNavigationController"];
-    WDGInviteViewController *inviteViewController = navigationController.viewControllers.firstObject;
-    inviteViewController.delegate = self;
-    inviteViewController.excludedUsers = [[NSSet<NSString * > alloc] initWithArray:excludedUserList];
-    inviteViewController.videoReference = self.videoReference;
-    inviteViewController.buttonString = @"邀请加入";
-
-    [self presentViewController:navigationController animated:YES completion:NULL];
-}
-
-- (IBAction)disconnect:(id)sender
-{
-    [self.videoConversation disconnect];
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-#pragma mark - WDGInviteViewControllerDelegate
-
-- (void)inviteViewController:(WDGInviteViewController *)viewController didDissmissedWithInvitingUserID:(NSString *)userID
-{
-    // 邀请其他用户加入当前会议
-    NSError *error = nil;
-    if (![self.videoConversation inviteWithParticipantID:userID error:&error]) {
-        NSLog(@"未能邀请用户，错误信息：%@", error);
-    }
-}
-
-#pragma mark - WDGVideoConversationDelegate
-
-- (void)conversation:(WDGVideoConversation *)conversation didConnectParticipant:(WDGVideoParticipant *)participant
-{
-    // 连接参与者，寻找可用的 WDGVideoView，并与其绑定
-    NSLog(@"已连接用户 %@", participant.participantID);
-    for (WDGVideoView *view in [self.remoteStackView.arrangedSubviews reverseObjectEnumerator]) {
+    for (WDGVideoView *view in self.videoViews) {
         if (![self.attachedViews.allValues containsObject:view]) {
-            WDGVideoRemoteStream *stream = participant.stream;
-            [stream attach:view];
-            view.hidden = NO;
-            self.attachedViews[participant.participantID] = view;
+            self.attachedViews[participant.ID] = view;
+            [participant.stream attach:view];
             return;
         }
     }
 }
 
-- (void)conversation:(WDGVideoConversation *)conversation didFailToConnectParticipant:(WDGVideoParticipant *)participant error:(NSError *)error
+- (void)detachStreamFromParticipant:(WDGVideoParticipant *)participant
 {
-    // 检查是否应该结束会话
-    NSLog(@"未能连接用户 %@", participant.participantID);
-    if (conversation.participants.count == 0) {
-        [self disconnect:nil];
+    // 参与者离线，解绑并隐藏 WDGVideoView
+    WDGVideoView *attachedView = self.attachedViews[participant.ID];
+    if (attachedView != nil) {
+        [self.attachedViews removeObjectForKey:participant.ID];
+        [participant.stream detach:attachedView];
     }
 }
 
-- (void)conversation:(WDGVideoConversation *)conversation didDisconnectParticipant:(WDGVideoParticipant *)participant
+#pragma mark - Actions
+
+- (IBAction)switchCameraButtonTapped:(id)sender
 {
-    WDGVideoView *attachedView = self.attachedViews[participant.participantID];
+    // 翻转摄像头
+    [self.localStream switchCamera];
+}
 
-    // 参与者离线，解绑并隐藏 WDGVideoView
-    if (attachedView != nil) {
-        [participant.stream detach:attachedView];
-        attachedView.hidden = YES;
-        [self.attachedViews removeObjectForKey:participant.participantID];
-    }
+- (IBAction)toggleMicrophone:(id)sender
+{
+    // 切换麦克风录音开关
+    self.localStream.audioEnabled = !self.localStream.audioEnabled;
+}
 
-    // 检查是否应该结束会话
-    if (conversation.participants.count == 0) {
-        [self disconnect:nil];
-    }
+- (IBAction)toggleVideo:(id)sender
+{
+    // 切换视频开关
+    self.localStream.videoEnabled = !self.localStream.videoEnabled;
+}
+
+- (IBAction)disconnect:(id)sender
+{
+    [self.conference disconnect];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - WDGVideoConferenceDelegate
+
+- (void)conferenceDidConnected:(WDGVideoConference *)conference
+{
+    NSLog(@"Conference connected");
+}
+
+- (void)conference:(WDGVideoConference *)conference didFailedToConnectWithError:(NSError *)error
+{
+    NSLog(@"Conference failed to connect with error: %@", error);
+}
+
+- (void)conference:(WDGVideoConference *)conference didDisconnectWithError:(NSError *)error
+{
+    NSLog(@"Conference disconnected with error: %@", error);
+}
+
+- (void)conference:(WDGVideoConference *)conference didConnectParticipant:(WDGVideoParticipant *)participant
+{
+    NSLog(@"Conference connect participant %@", participant.ID);
+    participant.delegate = self;
+}
+
+- (void)conference:(WDGVideoConference *)conference didDisconnectParticipant:(WDGVideoParticipant *)participant
+{
+    NSLog(@"Conference disconnect participant %@", participant.ID);
+    [self detachStreamFromParticipant:participant];
+}
+
+#pragma mark - WDGVideoParticipant
+
+- (void)participant:(WDGVideoParticipant *)participant didAddStream:(WDGVideoRemoteStream *)stream
+{
+    NSLog(@"Participant %@ addStream", participant);
+    [self attachStreamFromParticipant:participant];
+}
+
+- (void)participant:(WDGVideoParticipant *)participant didFailedToConnectWithError:(NSError *)error
+{
+    NSLog(@"Failed to connect participant: %@ error: %@", participant.ID, error);
 }
 
 @end

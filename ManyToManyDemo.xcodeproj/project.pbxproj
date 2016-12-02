@@ -15,9 +15,7 @@
 		362691311D99297C006F6EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3626912F1D99297C006F6EEE /* LaunchScreen.storyboard */; };
 		3626913A1D99387A006F6EEE /* WDGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362691391D99387A006F6EEE /* WDGLoginViewController.m */; };
 		3626913D1D99388D006F6EEE /* WDGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3626913C1D99388D006F6EEE /* WDGMainViewController.m */; };
-		362691401D99389C006F6EEE /* WDGInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3626913F1D99389C006F6EEE /* WDGInviteViewController.m */; };
 		362691431D9938B6006F6EEE /* WDGRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362691421D9938B6006F6EEE /* WDGRoomViewController.m */; };
-		36DD548B1D9A3BC9006CAA1D /* WDGUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +31,8 @@
 		362691391D99387A006F6EEE /* WDGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGLoginViewController.m; sourceTree = "<group>"; };
 		3626913B1D99388D006F6EEE /* WDGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGMainViewController.h; sourceTree = "<group>"; };
 		3626913C1D99388D006F6EEE /* WDGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGMainViewController.m; sourceTree = "<group>"; };
-		3626913E1D99389C006F6EEE /* WDGInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGInviteViewController.h; sourceTree = "<group>"; };
-		3626913F1D99389C006F6EEE /* WDGInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGInviteViewController.m; sourceTree = "<group>"; };
 		362691411D9938B6006F6EEE /* WDGRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRoomViewController.h; sourceTree = "<group>"; };
 		362691421D9938B6006F6EEE /* WDGRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRoomViewController.m; sourceTree = "<group>"; };
-		36DD54891D9A3BC9006CAA1D /* WDGUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGUserTableViewCell.h; sourceTree = "<group>"; };
-		36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGUserTableViewCell.m; sourceTree = "<group>"; };
 		8648266A63A718E81FD4F4D0 /* Pods-ManyToManyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyToManyDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManyToManyDemo/Pods-ManyToManyDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CD741C5272DA2698629DDA24 /* libPods-ManyToManyDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ManyToManyDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F90468765C4C424656407F /* Pods-ManyToManyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyToManyDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManyToManyDemo/Pods-ManyToManyDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,15 +58,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		361860211DB6285E00D11504 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				36DD54891D9A3BC9006CAA1D /* WDGUserTableViewCell.h */,
-				36DD548A1D9A3BC9006CAA1D /* WDGUserTableViewCell.m */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		362691151D99297C006F6EEE = {
 			isa = PBXGroup;
 			children = (
@@ -94,7 +79,6 @@
 		362691201D99297C006F6EEE /* ManyToManyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				361860211DB6285E00D11504 /* View */,
 				36DD54881D9A1D8D006CAA1D /* ViewController */,
 				362691241D99297C006F6EEE /* AppDelegate.h */,
 				362691251D99297C006F6EEE /* AppDelegate.m */,
@@ -122,8 +106,6 @@
 				362691391D99387A006F6EEE /* WDGLoginViewController.m */,
 				3626913B1D99388D006F6EEE /* WDGMainViewController.h */,
 				3626913C1D99388D006F6EEE /* WDGMainViewController.m */,
-				3626913E1D99389C006F6EEE /* WDGInviteViewController.h */,
-				3626913F1D99389C006F6EEE /* WDGInviteViewController.m */,
 				362691411D9938B6006F6EEE /* WDGRoomViewController.h */,
 				362691421D9938B6006F6EEE /* WDGRoomViewController.m */,
 			);
@@ -262,12 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DD548B1D9A3BC9006CAA1D /* WDGUserTableViewCell.m in Sources */,
 				3626913D1D99388D006F6EEE /* WDGMainViewController.m in Sources */,
 				362691431D9938B6006F6EEE /* WDGRoomViewController.m in Sources */,
 				3626913A1D99387A006F6EEE /* WDGLoginViewController.m in Sources */,
 				362691261D99297C006F6EEE /* AppDelegate.m in Sources */,
-				362691401D99389C006F6EEE /* WDGInviteViewController.m in Sources */,
 				362691231D99297C006F6EEE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
