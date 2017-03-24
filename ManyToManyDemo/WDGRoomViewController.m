@@ -107,6 +107,10 @@
 - (void)conference:(WDGVideoConference *)conference didFailedToConnectWithError:(NSError *)error
 {
     NSLog(@"Conference failed to connect with error: %@", error);
+    if (error != nil) {
+        NSString *errorMessage = [NSString stringWithFormat:@"会议错误: %@", [error localizedDescription]];
+        [self showAlertWithTitle:@"提示" message:errorMessage];
+    }
 }
 
 - (void)conference:(WDGVideoConference *)conference didDisconnectWithError:(NSError *)error
@@ -137,6 +141,13 @@
 - (void)participant:(WDGVideoParticipant *)participant didFailedToConnectWithError:(NSError *)error
 {
     NSLog(@"Failed to connect participant: %@ error: %@", participant.ID, error);
+}
+
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end
