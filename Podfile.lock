@@ -1,0 +1,38 @@
+PODS:
+  - WilddogAuth (2.0.7):
+    - WilddogCore
+  - WilddogCore (2.0.11):
+    - WilddogLogger
+    - WilddogNetworking
+    - WilddogWebSocket
+  - WilddogLogger (3.0.10)
+  - WilddogNetworking (3.1.2):
+    - WilddogNetworking/Reachability (= 3.1.2)
+    - WilddogNetworking/Serialization (= 3.1.2)
+  - WilddogNetworking/Reachability (3.1.2)
+  - WilddogNetworking/Serialization (3.1.2)
+  - WilddogRoom (2.0.0-beta):
+    - WilddogAuth (>= 2.0.2)
+    - WilddogVideoBase (>= 2.0.0)
+  - WilddogVideoBase (2.0.0):
+    - WilddogCore (>= 2.0.11)
+    - WilddogWebRTC (>= 58.0.11)
+  - WilddogWebRTC (58.0.12)
+  - WilddogWebSocket (1.0.1)
+
+DEPENDENCIES:
+  - WilddogRoom (= 2.0.0-beta)
+
+SPEC CHECKSUMS:
+  WilddogAuth: 79e4bbe52de7a78baa58ed97552652a2daa49274
+  WilddogCore: 692f2b9beda1695b65d983cc88b8be91ca637d6f
+  WilddogLogger: 30649562048a6021a002e16fa439e1cc5896a8b3
+  WilddogNetworking: 0e7f80b0839f376fa4d613c602b7c4f72634e761
+  WilddogRoom: a7f6a5512ac91795bb8308e4cb8ed9b92f8bd02f
+  WilddogVideoBase: 6828e721a6c37f272b1fdabc0286da86a18eadd0
+  WilddogWebRTC: 70d4346bfded11e154865b9d786ff30e063f55d3
+  WilddogWebSocket: 0f1437b4d26cfcd3b85376cba55e03b202e0e1b4
+
+PODFILE CHECKSUM: fb76bf22338c75a2f3fa3e30519fdc87baee9bd7
+
+COCOAPODS: 1.2.0

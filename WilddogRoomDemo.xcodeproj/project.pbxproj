@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29D416DC8C634FABB94C052A /* libPods-WilddogRoomDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EC6C7A19A43E0A6584F46F /* libPods-WilddogRoomDemo.a */; };
+		BC64EC681F590A7700F4FEA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC671F590A7700F4FEA1 /* main.m */; };
+		BC64EC6B1F590A7700F4FEA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC6A1F590A7700F4FEA1 /* AppDelegate.m */; };
+		BC64EC711F590A7700F4FEA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC64EC6F1F590A7700F4FEA1 /* Main.storyboard */; };
+		BC64EC731F590A7700F4FEA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC64EC721F590A7700F4FEA1 /* Assets.xcassets */; };
+		BC64EC761F590A7700F4FEA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC64EC741F590A7700F4FEA1 /* LaunchScreen.storyboard */; };
+		BC64EC811F590A7700F4FEA1 /* WilddogRoomDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC801F590A7700F4FEA1 /* WilddogRoomDemoTests.m */; };
+		BC64EC901F59586F00F4FEA1 /* WDGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC8F1F59586F00F4FEA1 /* WDGMainViewController.m */; };
+		BC64EC931F595A3300F4FEA1 /* WDGRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC921F595A3300F4FEA1 /* WDGRoomViewController.m */; };
+		BCB43A211F6A32C8000A0DFA /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB43A201F6A32C8000A0DFA /* VideoCollectionViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC64EC7D1F590A7700F4FEA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC64EC5B1F590A7700F4FEA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC64EC621F590A7700F4FEA1;
+			remoteInfo = WilddogRoomDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45EC6C7A19A43E0A6584F46F /* libPods-WilddogRoomDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogRoomDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		915EA7105567710893D450AC /* Pods-WilddogRoomDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogRoomDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		BC64EC631F590A7700F4FEA1 /* WilddogRoomDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WilddogRoomDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC64EC671F590A7700F4FEA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC64EC691F590A7700F4FEA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC64EC6A1F590A7700F4FEA1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC64EC701F590A7700F4FEA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC64EC721F590A7700F4FEA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC64EC751F590A7700F4FEA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC64EC771F590A7700F4FEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC64EC7C1F590A7700F4FEA1 /* WilddogRoomDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WilddogRoomDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC64EC801F590A7700F4FEA1 /* WilddogRoomDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WilddogRoomDemoTests.m; sourceTree = "<group>"; };
+		BC64EC821F590A7700F4FEA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC64EC8E1F59586F00F4FEA1 /* WDGMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGMainViewController.h; sourceTree = "<group>"; };
+		BC64EC8F1F59586F00F4FEA1 /* WDGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGMainViewController.m; sourceTree = "<group>"; };
+		BC64EC911F595A3300F4FEA1 /* WDGRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDGRoomViewController.h; sourceTree = "<group>"; };
+		BC64EC921F595A3300F4FEA1 /* WDGRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDGRoomViewController.m; sourceTree = "<group>"; };
+		BCB43A1F1F6A32C8000A0DFA /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
+		BCB43A201F6A32C8000A0DFA /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
+		C45F10D8C1BFBD27AEE3B3CA /* Pods-WilddogRoomDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogRoomDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC64EC601F590A7700F4FEA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D416DC8C634FABB94C052A /* libPods-WilddogRoomDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC64EC791F590A7700F4FEA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F91C9C130C3A94A6B663C4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45EC6C7A19A43E0A6584F46F /* libPods-WilddogRoomDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC64EC5A1F590A7700F4FEA1 = {
+			isa = PBXGroup;
+			children = (
+				BC64EC651F590A7700F4FEA1 /* WilddogRoomDemo */,
+				BC64EC7F1F590A7700F4FEA1 /* WilddogRoomDemoTests */,
+				BC64EC641F590A7700F4FEA1 /* Products */,
+				F041A328C5336E1EE6DEE89E /* Pods */,
+				8F91C9C130C3A94A6B663C4D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BC64EC641F590A7700F4FEA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC64EC631F590A7700F4FEA1 /* WilddogRoomDemo.app */,
+				BC64EC7C1F590A7700F4FEA1 /* WilddogRoomDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC64EC651F590A7700F4FEA1 /* WilddogRoomDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BC64EC691F590A7700F4FEA1 /* AppDelegate.h */,
+				BC64EC6A1F590A7700F4FEA1 /* AppDelegate.m */,
+				BC64EC8E1F59586F00F4FEA1 /* WDGMainViewController.h */,
+				BC64EC8F1F59586F00F4FEA1 /* WDGMainViewController.m */,
+				BC64EC911F595A3300F4FEA1 /* WDGRoomViewController.h */,
+				BC64EC921F595A3300F4FEA1 /* WDGRoomViewController.m */,
+				BCB43A1F1F6A32C8000A0DFA /* VideoCollectionViewCell.h */,
+				BCB43A201F6A32C8000A0DFA /* VideoCollectionViewCell.m */,
+				BC64EC6F1F590A7700F4FEA1 /* Main.storyboard */,
+				BC64EC741F590A7700F4FEA1 /* LaunchScreen.storyboard */,
+				BC64EC721F590A7700F4FEA1 /* Assets.xcassets */,
+				BC64EC771F590A7700F4FEA1 /* Info.plist */,
+				BC64EC661F590A7700F4FEA1 /* Supporting Files */,
+			);
+			path = WilddogRoomDemo;
+			sourceTree = "<group>";
+		};
+		BC64EC661F590A7700F4FEA1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC64EC671F590A7700F4FEA1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC64EC7F1F590A7700F4FEA1 /* WilddogRoomDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC64EC801F590A7700F4FEA1 /* WilddogRoomDemoTests.m */,
+				BC64EC821F590A7700F4FEA1 /* Info.plist */,
+			);
+			path = WilddogRoomDemoTests;
+			sourceTree = "<group>";
+		};
+		F041A328C5336E1EE6DEE89E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				915EA7105567710893D450AC /* Pods-WilddogRoomDemo.debug.xcconfig */,
+				C45F10D8C1BFBD27AEE3B3CA /* Pods-WilddogRoomDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC64EC621F590A7700F4FEA1 /* WilddogRoomDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC64EC851F590A7700F4FEA1 /* Build configuration list for PBXNativeTarget "WilddogRoomDemo" */;
+			buildPhases = (
+				F83736415EFBFF7D96D914E6 /* [CP] Check Pods Manifest.lock */,
+				BC64EC5F1F590A7700F4FEA1 /* Sources */,
+				BC64EC601F590A7700F4FEA1 /* Frameworks */,
+				BC64EC611F590A7700F4FEA1 /* Resources */,
+				E62352DC2D7F2671D33589C3 /* [CP] Embed Pods Frameworks */,
+				E6CF8D751D0F706CEB5581D3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WilddogRoomDemo;
+			productName = WilddogRoomDemo;
+			productReference = BC64EC631F590A7700F4FEA1 /* WilddogRoomDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC64EC7B1F590A7700F4FEA1 /* WilddogRoomDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC64EC881F590A7700F4FEA1 /* Build configuration list for PBXNativeTarget "WilddogRoomDemoTests" */;
+			buildPhases = (
+				BC64EC781F590A7700F4FEA1 /* Sources */,
+				BC64EC791F590A7700F4FEA1 /* Frameworks */,
+				BC64EC7A1F590A7700F4FEA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC64EC7E1F590A7700F4FEA1 /* PBXTargetDependency */,
+			);
+			name = WilddogRoomDemoTests;
+			productName = WilddogRoomDemoTests;
+			productReference = BC64EC7C1F590A7700F4FEA1 /* WilddogRoomDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC64EC5B1F590A7700F4FEA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Wilddog;
+				TargetAttributes = {
+					BC64EC621F590A7700F4FEA1 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5RERN32D73;
+						ProvisioningStyle = Automatic;
+					};
+					BC64EC7B1F590A7700F4FEA1 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 5RERN32D73;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC64EC621F590A7700F4FEA1;
+					};
+				};
+			};
+			buildConfigurationList = BC64EC5E1F590A7700F4FEA1 /* Build configuration list for PBXProject "WilddogRoomDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC64EC5A1F590A7700F4FEA1;
+			productRefGroup = BC64EC641F590A7700F4FEA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC64EC621F590A7700F4FEA1 /* WilddogRoomDemo */,
+				BC64EC7B1F590A7700F4FEA1 /* WilddogRoomDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC64EC611F590A7700F4FEA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC64EC761F590A7700F4FEA1 /* LaunchScreen.storyboard in Resources */,
+				BC64EC731F590A7700F4FEA1 /* Assets.xcassets in Resources */,
+				BC64EC711F590A7700F4FEA1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC64EC7A1F590A7700F4FEA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E62352DC2D7F2671D33589C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6CF8D751D0F706CEB5581D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F83736415EFBFF7D96D914E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC64EC5F1F590A7700F4FEA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC64EC901F59586F00F4FEA1 /* WDGMainViewController.m in Sources */,
+				BC64EC931F595A3300F4FEA1 /* WDGRoomViewController.m in Sources */,
+				BC64EC6B1F590A7700F4FEA1 /* AppDelegate.m in Sources */,
+				BCB43A211F6A32C8000A0DFA /* VideoCollectionViewCell.m in Sources */,
+				BC64EC681F590A7700F4FEA1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC64EC781F590A7700F4FEA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC64EC811F590A7700F4FEA1 /* WilddogRoomDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC64EC7E1F590A7700F4FEA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC64EC621F590A7700F4FEA1 /* WilddogRoomDemo */;
+			targetProxy = BC64EC7D1F590A7700F4FEA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC64EC6F1F590A7700F4FEA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC64EC701F590A7700F4FEA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC64EC741F590A7700F4FEA1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC64EC751F590A7700F4FEA1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC64EC831F590A7700F4FEA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC64EC841F590A7700F4FEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC64EC861F590A7700F4FEA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 915EA7105567710893D450AC /* Pods-WilddogRoomDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = WilddogRoomDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.www.roomDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BC64EC871F590A7700F4FEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C45F10D8C1BFBD27AEE3B3CA /* Pods-WilddogRoomDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = WilddogRoomDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.www.roomDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BC64EC891F590A7700F4FEA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				INFOPLIST_FILE = WilddogRoomDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.www.WilddogRoomDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WilddogRoomDemo.app/WilddogRoomDemo";
+			};
+			name = Debug;
+		};
+		BC64EC8A1F590A7700F4FEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5RERN32D73;
+				INFOPLIST_FILE = WilddogRoomDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.www.WilddogRoomDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WilddogRoomDemo.app/WilddogRoomDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC64EC5E1F590A7700F4FEA1 /* Build configuration list for PBXProject "WilddogRoomDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC64EC831F590A7700F4FEA1 /* Debug */,
+				BC64EC841F590A7700F4FEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC64EC851F590A7700F4FEA1 /* Build configuration list for PBXNativeTarget "WilddogRoomDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC64EC861F590A7700F4FEA1 /* Debug */,
+				BC64EC871F590A7700F4FEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC64EC881F590A7700F4FEA1 /* Build configuration list for PBXNativeTarget "WilddogRoomDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC64EC891F590A7700F4FEA1 /* Debug */,
+				BC64EC8A1F590A7700F4FEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC64EC5B1F590A7700F4FEA1 /* Project object */;
+}
