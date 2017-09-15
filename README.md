@@ -3,5 +3,5 @@
 
 ## 文档
 
-[完整文档](https://docs.wilddog.com/quickstart/video/ios-conversation.html)
+[完整文档](https://docs.wilddog.com/conference/iOS/index.html)
 
