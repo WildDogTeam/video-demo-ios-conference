@@ -7,7 +7,7 @@
 //
 
 #import <WilddogCore/WilddogCore.h>
-#import <WilddogRoom/WilddogRoom.h>
+#import <WilddogVideoRoom/WilddogVideoRoom.h>
 #import <WilddogVideoBase/WilddogVideoBase.h>
 
 #import "WDGRoomViewController.h"
@@ -21,7 +21,12 @@
 @property (nonatomic, strong) WDGVideoView *localView;
 @property (nonatomic, strong) WDGLocalStream *localStream;
 @property (nonatomic, strong) NSMutableArray<WDGStream *> *streams;
+
 @property (nonatomic, weak) IBOutlet UICollectionView *grid;
+@property (nonatomic, weak) IBOutlet UIButton *audioSwitch;
+@property (nonatomic, weak) IBOutlet UIButton *videoSwitch;
+@property (nonatomic, assign) BOOL audioOn;
+@property (nonatomic, assign) BOOL videoOn;
 
 @end
 
@@ -30,21 +35,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
     _streams = [[NSMutableArray alloc] init];
+    
     // 配置 UICollectionView
     [self setupCollectionView];
     // 创建并预览本地流
     [self setupLocalStream];
     // 创建或加入房间
-    _room = [[WDGRoom alloc] initWithRoomId:_roomId delegate:self];
+    _room = [[WDGRoom alloc] initWithRoomId:_roomId domain:@"bt-sh.wilddog.com" delegate:self];
+//    _room = [[WDGRoom alloc] initWithRoomId:_roomId domain:@"10.18.6.64" delegate:self];
+
     [_room connect];
-    // 发布本地流
-    [self publishLocalStream];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.title = self.roomId;
+    self.audioOn = YES;
+    self.videoOn = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSessionRouteChange:) name:AVAudioSessionRouteChangeNotification object:nil];
 }
 
@@ -94,6 +103,14 @@
     }
 }
 
+- (void)unpublishLocalStream {
+    if (self.localStream) {
+        [self.room unpublishLocalStream:self.localStream withCompletionBlock:^(NSError * _Nullable error) {
+            NSLog(@"Unpublish Completion Block");
+        }];
+    }
+}
+
 - (void)subscribeRoomStream:(WDGRoomStream *)roomStream {
     if (roomStream) {
         [self.room subscribeRoomStream:roomStream withCompletionBlock:^(NSError * _Nullable error) {
@@ -115,10 +132,18 @@
 
 - (void)wilddogRoomDidConnect:(WDGRoom *)wilddogRoom {
     NSLog(@"Room Connected!");
+    // 发布本地流
+    [self publishLocalStream];
 }
 
 - (void)wilddogRoomDidDisconnect:(WDGRoom *)wilddogRoom {
     NSLog(@"Room Disconnected!");
+    //__weak __typeof__(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //__strong __typeof__(self) strongSelf = weakSelf;
+        NSLog(@"Disconnected!");
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    });
 }
 
 - (void)wilddogRoom:(WDGRoom *)wilddogRoom didStreamAdded:(WDGRoomStream *)roomStream {
@@ -164,7 +189,7 @@
     self.grid.delegate = self;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     CGFloat width = (self.view.bounds.size.width - 24) / 2;
-    CGFloat height = (self.grid.bounds.size.height - 18) / 3;
+    CGFloat height = (self.view.bounds.size.height - 162) / 3;
     flowLayout.itemSize = CGSizeMake(width, height);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -185,14 +210,20 @@
     UIBarButtonItem *item = sender;
     if (item.tag == 0) {
         NSLog(@"recording event");
-        [self.room startRecordingWithCompletionBlock:^(NSString * _Nonnull fileName, NSError * _Nullable error) {
-            NSLog(@"record filename:%@",fileName);
-        }];
-        item.tag = 1;
+        [self.room startRecordingWithOptions:@{ @"fps" : @15,
+                                                @"bitrate" : @300,
+                                                @"canvasWidth" : @1000,
+                                                @"canvasHeight" : @1000,
+                                                @"bgColor" : @0x000000ff}
+                             completionBlock:^(NSString * _Nonnull url, NSError * _Nullable error) {
+                                 NSLog(@"record filename: \n%@",url);
+                                 item.tag = 1;
+                             }];
     } else {
         NSLog(@"stop recording event");
         [self.room stopRecordingWithCompletionBlock:^(NSError * _Nullable error) {
             NSLog(@"recording stopped");
+            item.tag = 0;
         }];
     }
 }
@@ -200,6 +231,21 @@
 - (IBAction)switchCameraButtonTapped:(id)sender {
     [self.localStream switchCamera];
     self.localView.mirror = !self.localView.mirror;
+    //self.attachedViews[self.uid].mirror = !self.attachedViews[self.uid].mirror;
+}
+
+- (IBAction)toggleMicrophone:(id)sender {
+    self.localStream.audioEnabled = !self.localStream.audioEnabled;
+    self.audioOn = !self.audioOn;
+    [self.audioSwitch setTitle:self.audioOn?@"音频开":@"音频关" forState:UIControlStateNormal];
+    [self.audioSwitch setTitleColor:self.audioOn?[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]:[UIColor redColor] forState:UIControlStateNormal];
+}
+
+- (IBAction)toggleVideo:(id)sender {
+    self.localStream.videoEnabled = !self.localStream.videoEnabled;
+    self.videoOn = !self.videoOn;
+    [self.videoSwitch setTitle:self.videoOn?@"视频开":@"视频关" forState:UIControlStateNormal];
+    [self.videoSwitch setTitleColor:self.videoOn?[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]:[UIColor redColor] forState:UIControlStateNormal];
 }
 
 - (IBAction)disconnect:(id)sender {
