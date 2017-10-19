@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSString *roomId;
 @property (nonatomic, strong) NSString *uid;
+@property (nonatomic, assign) WDGVideoDimensions dimension;
 
 @end

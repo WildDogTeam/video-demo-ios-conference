@@ -16,6 +16,7 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *roomIdTextField;
 @property (nonatomic, weak) IBOutlet UIButton *joinButton;
+@property (unsafe_unretained, nonatomic) IBOutlet UISegmentedControl *resolutionControl;
 
 @end
 
@@ -60,6 +61,20 @@
             }
             roomViewController.roomId = roomId;
             roomViewController.uid = user.uid;
+            switch (self.resolutionControl.selectedSegmentIndex) {
+                case 0:
+                    roomViewController.dimension = WDGVideoDimensions360p;
+                    break;
+                case 1:
+                    roomViewController.dimension = WDGVideoDimensions480p;
+                    break;
+                case 2:
+                    roomViewController.dimension = WDGVideoDimensions720p;
+                    break;
+                default:
+                    roomViewController.dimension = WDGVideoDimensions360p;
+                    break;
+            }
             [self presentViewController:navigationController animated:YES completion:NULL];
             strongSelf.joinButton.enabled = YES;
         }];

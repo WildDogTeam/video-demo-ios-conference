@@ -178,7 +178,7 @@
     // 创建本地流
     WDGLocalStreamOptions *localStreamOptions = [[WDGLocalStreamOptions alloc] init];
     localStreamOptions.shouldCaptureAudio = YES;
-    localStreamOptions.dimension = WDGVideoDimensions360p;
+    localStreamOptions.dimension = self.dimension;
     self.localStream = [WDGLocalStream localStreamWithOptions:localStreamOptions];
     [self.streams addObject:self.localStream];
     [self.grid reloadData];
