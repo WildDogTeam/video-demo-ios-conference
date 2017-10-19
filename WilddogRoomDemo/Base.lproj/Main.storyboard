@@ -146,7 +146,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zLp-nj-dV8">
-                                <rect key="frame" x="8" y="72" width="359" height="529"/>
+                                <rect key="frame" x="8" y="64" width="359" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tBk-M8-yk5">
                                     <size key="itemSize" width="167" height="188"/>
@@ -184,7 +184,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vb9-uE-gMy" secondAttribute="trailing" constant="8" id="8Oc-Gf-3GM"/>
-                            <constraint firstItem="zLp-nj-dV8" firstAttribute="top" secondItem="Tqk-Qk-ous" secondAttribute="bottom" constant="8" id="KKy-pP-qhq"/>
+                            <constraint firstItem="zLp-nj-dV8" firstAttribute="top" secondItem="Tqk-Qk-ous" secondAttribute="bottom" id="KKy-pP-qhq"/>
                             <constraint firstAttribute="trailing" secondItem="zLp-nj-dV8" secondAttribute="trailing" constant="8" id="Seh-ui-Q2z"/>
                             <constraint firstItem="vb9-uE-gMy" firstAttribute="top" secondItem="zLp-nj-dV8" secondAttribute="bottom" constant="8" id="Sok-R2-mKo"/>
                             <constraint firstItem="Qom-kf-8V0" firstAttribute="top" secondItem="vb9-uE-gMy" secondAttribute="bottom" constant="8" id="aY5-Fm-CZP"/>
