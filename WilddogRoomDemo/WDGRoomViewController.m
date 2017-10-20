@@ -44,8 +44,6 @@
     [self setupLocalStream];
     // 创建或加入房间
     _room = [[WDGRoom alloc] initWithRoomId:_roomId domain:@"bt-sh.wilddog.com" delegate:self];
-//    _room = [[WDGRoom alloc] initWithRoomId:_roomId domain:@"10.18.6.64" delegate:self];
-
     [_room connect];
 }
 
@@ -179,6 +177,7 @@
     WDGLocalStreamOptions *localStreamOptions = [[WDGLocalStreamOptions alloc] init];
     localStreamOptions.shouldCaptureAudio = YES;
     localStreamOptions.dimension = self.dimension;
+    localStreamOptions.maxFPS = self.fps;
     self.localStream = [WDGLocalStream localStreamWithOptions:localStreamOptions];
     [self.streams addObject:self.localStream];
     [self.grid reloadData];
@@ -189,9 +188,14 @@
     self.grid.delegate = self;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     CGFloat width = (self.view.bounds.size.width - 24) / 2;
-    CGFloat height = (self.view.bounds.size.height - 162) / 3;
-//    CGFloat width = self.view.bounds.size.width - (8*2);
-//    CGFloat height = self.view.bounds.size.height - (20 + 44 + 8*3 + 50);
+    CGFloat height = (self.view.bounds.size.height - 154) / 3;
+    if (self.frame == 1) {
+        width = self.view.bounds.size.width - (8*2);
+        height = self.view.bounds.size.height - (20 + 44 + 8*3 + 50);
+    } else if (self.frame == 4) {
+        width = (self.view.bounds.size.width - 24) / 2;
+        height = (self.view.bounds.size.height - 146) / 2;
+    }
     self.grid.pagingEnabled = YES;
     flowLayout.itemSize = CGSizeMake(width, height);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;

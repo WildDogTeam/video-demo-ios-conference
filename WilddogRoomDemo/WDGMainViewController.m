@@ -16,7 +16,9 @@
 
 @property (nonatomic, weak) IBOutlet UITextField *roomIdTextField;
 @property (nonatomic, weak) IBOutlet UIButton *joinButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UISegmentedControl *resolutionControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *resolutionControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *frameControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *fpsControl;
 
 @end
 
@@ -73,6 +75,25 @@
                     break;
                 default:
                     roomViewController.dimension = WDGVideoDimensions360p;
+                    break;
+            }
+            switch (self.frameControl.selectedSegmentIndex) {
+                case 0:
+                    roomViewController.frame = 6;
+                    break;
+                case 1:
+                    roomViewController.frame = 4;
+                    break;
+                default:
+                    roomViewController.frame = 1;
+                    break;
+            }
+            switch (self.fpsControl.selectedSegmentIndex) {
+                case 0:
+                    roomViewController.fps = 15;
+                    break;
+                default:
+                    roomViewController.fps = 30;
                     break;
             }
             [self presentViewController:navigationController animated:YES completion:NULL];
