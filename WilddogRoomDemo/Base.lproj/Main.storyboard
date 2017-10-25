@@ -233,6 +233,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="grid" destination="zLp-nj-dV8" id="gt1-TT-U0Q"/>
+                        <outlet property="recordButton" destination="3Kh-IQ-elB" id="PLR-Wf-KBa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msS-DU-1Qp" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,10 +23,12 @@
 @property (nonatomic, strong) NSMutableArray<WDGStream *> *streams;
 
 @property (nonatomic, weak) IBOutlet UICollectionView *grid;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *audioSwitch;
 @property (nonatomic, weak) IBOutlet UIButton *videoSwitch;
 @property (nonatomic, assign) BOOL audioOn;
 @property (nonatomic, assign) BOOL videoOn;
+@property (nonatomic, strong) __block NSString *recordUrl;
 
 @end
 
@@ -53,6 +55,7 @@
     self.audioOn = YES;
     self.videoOn = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didSessionRouteChange:) name:AVAudioSessionRouteChangeNotification object:nil];
+    [self.recordButton setTintColor:[UIColor colorWithRed:0 green:0.6 blue:0 alpha:1]];
 }
 
 - (void)didSessionRouteChange:(NSNotification *)notification {
@@ -215,6 +218,7 @@
 #pragma mark - Action Buttons
 - (IBAction)recording:(id)sender {
     UIBarButtonItem *item = sender;
+    __weak __typeof__(self) weakSelf = self;
     if (item.tag == 0) {
         NSLog(@"recording event");
         [self.room startRecordingWithOptions:@{ @"fps" : @15,
@@ -223,15 +227,24 @@
                                                 @"canvasHeight" : @1000,
                                                 @"bgColor" : @0x000000ff}
                              completionBlock:^(NSString * _Nonnull url, NSError * _Nullable error) {
-                                 NSLog(@"record filename: \n%@",url);
+                                 __strong __typeof__(self) strongSelf = weakSelf;
+                                 strongSelf.recordUrl = url;
                                  item.tag = 1;
+                                 NSLog(@"record filename: \n%@",url);
                              }];
+        [self.recordButton setTintColor:[UIColor colorWithRed:0.8 green:0 blue:0 alpha:1]];
     } else {
         NSLog(@"stop recording event");
         [self.room stopRecordingWithCompletionBlock:^(NSError * _Nullable error) {
-            NSLog(@"recording stopped");
+            __strong __typeof__(self) strongSelf = weakSelf;
+            if (strongSelf.recordUrl) {
+                [strongSelf showAlertWithTitle:@"Record Path" message:self.recordUrl];
+                strongSelf.recordUrl = nil;
+            }
             item.tag = 0;
+            NSLog(@"recording stopped");
         }];
+        [self.recordButton setTintColor:[UIColor colorWithRed:0 green:0.6 blue:0 alpha:1]];
     }
 }
 
