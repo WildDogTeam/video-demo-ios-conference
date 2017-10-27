@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		29D416DC8C634FABB94C052A /* libPods-WilddogRoomDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45EC6C7A19A43E0A6584F46F /* libPods-WilddogRoomDemo.a */; };
+		52E392964D7035A79F092FCF /* libPods-WilddogRoomDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E13A3CD96D0560F762341B47 /* libPods-WilddogRoomDemoTests.a */; };
 		BC64EC681F590A7700F4FEA1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC671F590A7700F4FEA1 /* main.m */; };
 		BC64EC6B1F590A7700F4FEA1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC64EC6A1F590A7700F4FEA1 /* AppDelegate.m */; };
 		BC64EC711F590A7700F4FEA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC64EC6F1F590A7700F4FEA1 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		45EC6C7A19A43E0A6584F46F /* libPods-WilddogRoomDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogRoomDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		915EA7105567710893D450AC /* Pods-WilddogRoomDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogRoomDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		95C9E7AEF03F0CF9ECC8377E /* Pods-WilddogRoomDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogRoomDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogRoomDemoTests/Pods-WilddogRoomDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC64EC631F590A7700F4FEA1 /* WilddogRoomDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WilddogRoomDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64EC671F590A7700F4FEA1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC64EC691F590A7700F4FEA1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +52,8 @@
 		BCB43A1F1F6A32C8000A0DFA /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
 		BCB43A201F6A32C8000A0DFA /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
 		C45F10D8C1BFBD27AEE3B3CA /* Pods-WilddogRoomDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogRoomDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CBD61EA08FF26A3CC9B25878 /* Pods-WilddogRoomDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WilddogRoomDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WilddogRoomDemoTests/Pods-WilddogRoomDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E13A3CD96D0560F762341B47 /* libPods-WilddogRoomDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WilddogRoomDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E392964D7035A79F092FCF /* libPods-WilddogRoomDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				45EC6C7A19A43E0A6584F46F /* libPods-WilddogRoomDemo.a */,
+				E13A3CD96D0560F762341B47 /* libPods-WilddogRoomDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			children = (
 				915EA7105567710893D450AC /* Pods-WilddogRoomDemo.debug.xcconfig */,
 				C45F10D8C1BFBD27AEE3B3CA /* Pods-WilddogRoomDemo.release.xcconfig */,
+				95C9E7AEF03F0CF9ECC8377E /* Pods-WilddogRoomDemoTests.debug.xcconfig */,
+				CBD61EA08FF26A3CC9B25878 /* Pods-WilddogRoomDemoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -172,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC64EC881F590A7700F4FEA1 /* Build configuration list for PBXNativeTarget "WilddogRoomDemoTests" */;
 			buildPhases = (
+				DEB78CDF82EFDC3061EF287E /* [CP] Check Pods Manifest.lock */,
 				BC64EC781F590A7700F4FEA1 /* Sources */,
 				BC64EC791F590A7700F4FEA1 /* Frameworks */,
 				BC64EC7A1F590A7700F4FEA1 /* Resources */,
+				1DA67175A76056B6BF51A35E /* [CP] Embed Pods Frameworks */,
+				CD8E18EA82038AB9872F79D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,7 +259,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E62352DC2D7F2671D33589C3 /* [CP] Embed Pods Frameworks */ = {
+		1DA67175A76056B6BF51A35E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,6 +268,57 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogRoomDemoTests/Pods-WilddogRoomDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD8E18EA82038AB9872F79D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WilddogRoomDemoTests/Pods-WilddogRoomDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEB78CDF82EFDC3061EF287E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WilddogRoomDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E62352DC2D7F2671D33589C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WilddogRoomDemo/Pods-WilddogRoomDemo-frameworks.sh",
+				"${PODS_ROOT}/WilddogWebRTC/WebRTC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -284,13 +346,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WilddogRoomDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -460,7 +525,7 @@
 				INFOPLIST_FILE = WilddogRoomDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.www.roomDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.roomDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -475,13 +540,14 @@
 				INFOPLIST_FILE = WilddogRoomDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.www.roomDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wilddog.roomDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		BC64EC891F590A7700F4FEA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95C9E7AEF03F0CF9ECC8377E /* Pods-WilddogRoomDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5RERN32D73;
@@ -496,6 +562,7 @@
 		};
 		BC64EC8A1F590A7700F4FEA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBD61EA08FF26A3CC9B25878 /* Pods-WilddogRoomDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 5RERN32D73;

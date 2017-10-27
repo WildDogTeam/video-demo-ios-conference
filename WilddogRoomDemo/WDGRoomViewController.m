@@ -14,6 +14,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "VideoCollectionViewCell.h"
 
+#define RecordPathTitle @"视频路径"
+
 
 @interface WDGRoomViewController () <WDGRoomDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -45,7 +47,9 @@
     // 创建并预览本地流
     [self setupLocalStream];
     // 创建或加入房间
-    _room = [[WDGRoom alloc] initWithRoomId:_roomId domain:@"bt-sh.wilddog.com" delegate:self];
+//    [[WDGVideoInitializer sharedInstance] performSelector:@selector(allowsUntrustedCertificates)];
+    //_room = [[WDGRoom alloc] initWithRoomId:_roomId url:@"wss://10.18.6.72:2600/ws" delegate:self];
+    _room = [[WDGRoom alloc] initWithRoomId:_roomId delegate:self];
     [_room connect];
 }
 
@@ -210,7 +214,22 @@
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+    
+    if([title isEqualToString:RecordPathTitle]){
+        [alertController addAction:[UIAlertAction actionWithTitle:@"复制" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIPasteboard *pastboard = [UIPasteboard generalPasteboard];
+            pastboard.string        = message;
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"打开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:message]];
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDestructive handler:nil]];
+    }else{
+        [alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil]];
+    }
+    
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -238,7 +257,7 @@
         [self.room stopRecordingWithCompletionBlock:^(NSError * _Nullable error) {
             __strong __typeof__(self) strongSelf = weakSelf;
             if (strongSelf.recordUrl) {
-                [strongSelf showAlertWithTitle:@"Record Path" message:self.recordUrl];
+                [strongSelf showAlertWithTitle:RecordPathTitle message:self.recordUrl];
                 strongSelf.recordUrl = nil;
             }
             item.tag = 0;

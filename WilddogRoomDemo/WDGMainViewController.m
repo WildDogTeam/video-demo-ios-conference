@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *frameControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *fpsControl;
 
+@property(nonatomic,strong)UIColor *originalColor;
+
 @end
 
 @implementation WDGMainViewController
@@ -30,7 +32,10 @@
 }
 
 - (IBAction)joinButtonDidTapped:(id)sender {
+    self.originalColor = self.joinButton.backgroundColor;
     self.joinButton.enabled = NO;
+    self.joinButton.backgroundColor = [UIColor lightGrayColor];
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(AllowTouchBTN) userInfo:nil repeats:NO];
     
     // 配置 Wilddog App
     NSString *appID = @"wildrtc";
@@ -97,9 +102,14 @@
                     break;
             }
             [self presentViewController:navigationController animated:YES completion:NULL];
-            strongSelf.joinButton.enabled = YES;
+            //strongSelf.joinButton.enabled = YES;
         }];
     }];
+}
+
+- (void)AllowTouchBTN{
+    self.joinButton.enabled = YES;
+    self.joinButton.backgroundColor = self.originalColor;
 }
 
 @end
