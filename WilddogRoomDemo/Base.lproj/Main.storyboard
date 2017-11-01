@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Courier.ttc">
+            <string>Courier</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Video多人视频会议-->
         <scene sceneID="cit-Q0-pdc">
@@ -173,7 +178,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zLp-nj-dV8">
-                                <rect key="frame" x="8" y="64" width="359" height="537"/>
+                                <rect key="frame" x="8" y="64" width="359" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tBk-M8-yk5">
                                     <size key="itemSize" width="167" height="188"/>
@@ -207,15 +212,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resource usage will be updated every 2s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecR-2h-O3p">
+                                <rect key="frame" x="8" y="586" width="359" height="15"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="15"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vb9-uE-gMy" secondAttribute="trailing" constant="8" id="8Oc-Gf-3GM"/>
+                            <constraint firstAttribute="trailing" secondItem="ecR-2h-O3p" secondAttribute="trailing" constant="8" id="J9c-Wk-MnN"/>
                             <constraint firstItem="zLp-nj-dV8" firstAttribute="top" secondItem="Tqk-Qk-ous" secondAttribute="bottom" id="KKy-pP-qhq"/>
                             <constraint firstAttribute="trailing" secondItem="zLp-nj-dV8" secondAttribute="trailing" constant="8" id="Seh-ui-Q2z"/>
-                            <constraint firstItem="vb9-uE-gMy" firstAttribute="top" secondItem="zLp-nj-dV8" secondAttribute="bottom" constant="8" id="Sok-R2-mKo"/>
                             <constraint firstItem="Qom-kf-8V0" firstAttribute="top" secondItem="vb9-uE-gMy" secondAttribute="bottom" constant="8" id="aY5-Fm-CZP"/>
+                            <constraint firstItem="ecR-2h-O3p" firstAttribute="top" secondItem="zLp-nj-dV8" secondAttribute="bottom" constant="8" id="b6a-Mf-qRp"/>
+                            <constraint firstItem="ecR-2h-O3p" firstAttribute="leading" secondItem="UXY-pw-Fty" secondAttribute="leading" constant="8" id="cva-F8-RtG"/>
                             <constraint firstItem="zLp-nj-dV8" firstAttribute="leading" secondItem="UXY-pw-Fty" secondAttribute="leading" constant="8" id="fJy-AW-RVX"/>
+                            <constraint firstItem="vb9-uE-gMy" firstAttribute="top" secondItem="ecR-2h-O3p" secondAttribute="bottom" constant="8" id="kyO-3y-RD5"/>
                             <constraint firstItem="vb9-uE-gMy" firstAttribute="leading" secondItem="UXY-pw-Fty" secondAttribute="leading" constant="8" id="vz1-kB-2k1"/>
                         </constraints>
                     </view>
@@ -234,6 +248,7 @@
                     <connections>
                         <outlet property="grid" destination="zLp-nj-dV8" id="gt1-TT-U0Q"/>
                         <outlet property="recordButton" destination="3Kh-IQ-elB" id="PLR-Wf-KBa"/>
+                        <outlet property="systemResourceLabel" destination="ecR-2h-O3p" id="6hl-xC-ajT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msS-DU-1Qp" userLabel="First Responder" sceneMemberID="firstResponder"/>

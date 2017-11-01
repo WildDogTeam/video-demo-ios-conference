@@ -13,6 +13,8 @@
 #import "WDGRoomViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "VideoCollectionViewCell.h"
+#import <mach/mach.h>
+
 
 #define RecordPathTitle @"视频路径"
 
@@ -31,6 +33,7 @@
 @property (nonatomic, assign) BOOL audioOn;
 @property (nonatomic, assign) BOOL videoOn;
 @property (nonatomic, strong) __block NSString *recordUrl;
+@property (weak, nonatomic) IBOutlet UILabel *systemResourceLabel;
 
 @end
 
@@ -51,6 +54,7 @@
     //_room = [[WDGRoom alloc] initWithRoomId:_roomId url:@"wss://10.18.6.72:2600/ws" delegate:self];
     _room = [[WDGRoom alloc] initWithRoomId:_roomId delegate:self];
     [_room connect];
+    [self getSystemResourceUsage];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -195,13 +199,13 @@
     self.grid.delegate = self;
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     CGFloat width = (self.view.bounds.size.width - 24) / 2;
-    CGFloat height = (self.view.bounds.size.height - 154) / 3;
+    CGFloat height = (self.view.bounds.size.height - 154 - 23) / 3;
     if (self.frame == 1) {
         width = self.view.bounds.size.width - (8*2);
-        height = self.view.bounds.size.height - (20 + 44 + 8*3 + 50);
+        height = self.view.bounds.size.height - (20 + 44 + 8*3 + 50) - 23;
     } else if (self.frame == 4) {
         width = (self.view.bounds.size.width - 24) / 2;
-        height = (self.view.bounds.size.height - 146) / 2;
+        height = (self.view.bounds.size.height - 146 - 23) / 2;
     }
     self.grid.pagingEnabled = YES;
     flowLayout.itemSize = CGSizeMake(width, height);
@@ -290,6 +294,91 @@
 - (IBAction)disconnect:(id)sender {
     [self.room disconnect];
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - System Resource Stats
+
+float get_memory_usage() {
+    struct task_basic_info info;
+    //mach_msg_type_number_t size = sizeof(info);
+    mach_msg_type_number_t size = MACH_TASK_BASIC_INFO_COUNT;
+    kern_return_t kerr = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&info, &size);
+    if( kerr == KERN_SUCCESS ) {
+        return ((CGFloat)info.resident_size / 1000000);
+    } else {
+        return -1;
+    }
+}
+
+float get_cpu_usage() {
+    kern_return_t kr;
+    task_info_data_t tinfo;
+    mach_msg_type_number_t task_info_count;
+    
+    task_info_count = TASK_INFO_MAX;
+    kr = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)tinfo, &task_info_count);
+    if (kr != KERN_SUCCESS) {
+        return -1;
+    }
+    
+    task_basic_info_t      basic_info;
+    thread_array_t         thread_list;
+    mach_msg_type_number_t thread_count;
+    
+    thread_info_data_t     thinfo;
+    mach_msg_type_number_t thread_info_count;
+    
+    thread_basic_info_t basic_info_th;
+    uint32_t stat_thread = 0; // Mach threads
+    
+    basic_info = (task_basic_info_t)tinfo;
+    
+    // get threads in the task
+    kr = task_threads(mach_task_self(), &thread_list, &thread_count);
+    if (kr != KERN_SUCCESS) {
+        return -1;
+    }
+    if (thread_count > 0) {
+        stat_thread += thread_count;
+    }
+    long tot_sec = 0;
+    long tot_usec = 0;
+    float tot_cpu = 0;
+    int j;
+    // for each thread
+    for (j = 0; j < (int)thread_count; j++) {
+        thread_info_count = THREAD_INFO_MAX;
+        kr = thread_info(thread_list[j], THREAD_BASIC_INFO, (thread_info_t)thinfo, &thread_info_count);
+        if (kr != KERN_SUCCESS) {
+            return -1;
+        }
+        basic_info_th = (thread_basic_info_t)thinfo;
+        if (!(basic_info_th->flags & TH_FLAGS_IDLE)) {
+            tot_sec = tot_sec + basic_info_th->user_time.seconds + basic_info_th->system_time.seconds;
+            tot_usec = tot_usec + basic_info_th->user_time.microseconds + basic_info_th->system_time.microseconds;
+            tot_cpu = tot_cpu + basic_info_th->cpu_usage / (float)TH_USAGE_SCALE * 100.0;
+        }
+    }
+    kr = vm_deallocate(mach_task_self(), (vm_offset_t)thread_list, thread_count * sizeof(thread_t));
+    assert(kr == KERN_SUCCESS);
+    if (kr == KERN_SUCCESS) {
+        return tot_cpu;
+    } else {
+        return -1;
+    }
+}
+
+- (void)getSystemResourceUsage {
+    NSString *usageReport = [NSString stringWithFormat:@"CPU: %.2f%@, Memory: %.2fMB", get_cpu_usage(), @"%", get_memory_usage()];
+    __weak __typeof__(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        __strong __typeof__(self) strongSelf = weakSelf;
+        strongSelf.systemResourceLabel.text = usageReport;
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_global_queue(0, DISPATCH_QUEUE_PRIORITY_DEFAULT), ^{
+        __strong __typeof__(self) strongSelf = weakSelf;
+        [strongSelf getSystemResourceUsage];
+    });
 }
 
 @end

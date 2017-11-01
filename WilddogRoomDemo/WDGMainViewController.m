@@ -62,7 +62,7 @@
             UINavigationController *navigationController = [strongSelf.storyboard instantiateViewControllerWithIdentifier:@"roomNavigationController"];
             WDGRoomViewController *roomViewController = navigationController.viewControllers.firstObject;
             // 传递获得的 roomId，如果不输入，默认为 'your_room_id'
-            NSString *roomId = @"roomid";
+            NSString *roomId = @"default";
             if (![self.roomIdTextField.text isEqualToString:@""]) {
                 roomId = self.roomIdTextField.text;
             }
