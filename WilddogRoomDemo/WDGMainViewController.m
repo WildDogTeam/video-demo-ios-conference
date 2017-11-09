@@ -70,12 +70,18 @@
             roomViewController.uid = user.uid;
             switch (self.resolutionControl.selectedSegmentIndex) {
                 case 0:
-                    roomViewController.dimension = WDGVideoDimensions360p;
+                    roomViewController.dimension = WDGVideoDimensions120p;
                     break;
                 case 1:
-                    roomViewController.dimension = WDGVideoDimensions480p;
+                    roomViewController.dimension = WDGVideoDimensions240p;
                     break;
                 case 2:
+                    roomViewController.dimension = WDGVideoDimensions360p;
+                    break;
+                case 3:
+                    roomViewController.dimension = WDGVideoDimensions480p;
+                    break;
+                case 4:
                     roomViewController.dimension = WDGVideoDimensions720p;
                     break;
                 default:

@@ -293,6 +293,7 @@
 
 - (IBAction)disconnect:(id)sender {
     [self.room disconnect];
+    [self.localStream close];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
