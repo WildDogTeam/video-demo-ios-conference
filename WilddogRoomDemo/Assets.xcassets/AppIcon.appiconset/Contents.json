@@ -107,13 +107,6 @@
       "idiom" : "ios-marketing",
       "filename" : "conversation.jpeg",
       "scale" : "1x"
-    },
-    {
-      "size" : "1024x1024",
-      "idiom" : "ios-marketing",
-      "filename" : "icon.png",
-      "scale" : "1x",
-      "platform" : "ios"
     }
   ],
   "info" : {
