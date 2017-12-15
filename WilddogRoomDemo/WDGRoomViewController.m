@@ -49,10 +49,11 @@
     [self setupCollectionView];
     // 创建并预览本地流
     [self setupLocalStream];
+    // 打开控制台日志（可选）
+    [WDGVideoInitializer sharedInstance].userLogLevel = WDGVideoLogLevelError;
     // 创建或加入房间
-//    [[WDGVideoInitializer sharedInstance] performSelector:@selector(allowsUntrustedCertificates)];
-    //_room = [[WDGRoom alloc] initWithRoomId:_roomId url:@"wss://10.18.6.72:2600/ws" delegate:self];
     _room = [[WDGRoom alloc] initWithRoomId:_roomId delegate:self];
+//    _room = [[WDGRoom alloc] initWithRoomId:_roomId url:@"bt-sh-test.wilddog.com" delegate:self];
     [_room connect];
     [self getSystemResourceUsage];
 }
