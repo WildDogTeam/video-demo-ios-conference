@@ -249,7 +249,7 @@
                                                 @"bitrate" : @300,
                                                 @"canvasWidth" : @1000,
                                                 @"canvasHeight" : @1000,
-                                                @"bgColor" : @0x000000ff}
+                                                @"bgColor" : @0x000000}
                              completionBlock:^(NSString * _Nonnull url, NSError * _Nullable error) {
                                  __strong __typeof__(self) strongSelf = weakSelf;
                                  strongSelf.recordUrl = url;
