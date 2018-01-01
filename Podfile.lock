@@ -2,13 +2,13 @@ PODS:
   - WilddogAuth (2.0.7):
     - WilddogCore (~> 2.0.2)
   - WilddogCore (2.0.11)
-  - WilddogVideoBase (2.3.1):
+  - WilddogVideoBase (2.4.0):
     - WilddogCore (~> 2.0.11)
-    - WilddogWebRTC (~> 62.0.2)
-  - WilddogVideoRoom (2.2.5):
+    - WilddogWebRTC (~> 63.0.0)
+  - WilddogVideoRoom (2.3.0):
     - WilddogAuth (>= 2.0.2)
-    - WilddogVideoBase (~> 2.3.1)
-  - WilddogWebRTC (62.0.2)
+    - WilddogVideoBase (~> 2.4.0)
+  - WilddogWebRTC (63.0.0)
 
 DEPENDENCIES:
   - WilddogVideoRoom
@@ -16,9 +16,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   WilddogAuth: 6c5f364277547490eed7e5a5c955b45e544e8ebf
   WilddogCore: 515371b98a3298ced567033df3348f9f0e3b2dc0
-  WilddogVideoBase: bc01197ed320ab687a569f335b00e70b637d27ab
-  WilddogVideoRoom: 244a167132cd8a2e20fc60adec125e00d991ab30
-  WilddogWebRTC: 286e2a608bb4dba2dfeefe0371fcf31af5aa8b7a
+  WilddogVideoBase: ea17a5b6c5d0a86adfa2f4c3e9daacb44cb4f048
+  WilddogVideoRoom: 6dd5f9f34173161ce670800a587197ba99b4c591
+  WilddogWebRTC: 5c7a6c98c5672eb90e833546311f34ce3c34c88c
 
 PODFILE CHECKSUM: 535ec07ef70560323ff939deeefb0d015bdec727
 
